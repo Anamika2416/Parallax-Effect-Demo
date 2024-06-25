@@ -1,0 +1,118 @@
+ /* universal selector it will be applied to all elements  */
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100vh;  /* wrapper ke andr jo v kr rhe aur sbme hona chahiye isliye wrapper ki height view port ke barabar hogi */
+    /* overflow-y:auto;  y axis me overflow hone dena hai aur x-axis ka overflow bnd krna hai */
+    overflow-x: hidden;
+    perspective: 10px; /* as we have to work on z axis so we need to turn on perspective */
+}
+.container{
+    position:relative;  
+    /* ye krna jruri hai ? hw */
+     /* qki hme image overlap krwani hai to position relative rkhna hoga  */
+     height:100%;
+     display: flex;
+     /* below are for aliging text adventure to centre */
+     justify-content: center;
+     align-items: center;
+     transform-style: preserve-3d;
+     /* iska mtlb hme jo v 3d setting kiye hai usko htana nhi hai */
+     z-index: -1;
+     /* hw need of z index */
+} 
+.background,.foreground{
+    position:relative;
+    height:100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.background{
+    transform:translateZ(-40px) scale(8);
+    /*  to create parallax  mtlb paharo ko dur krna*/
+
+}
+.foreground{
+    transform:translateZ(-30px) scale(2);
+    margin-top: 1000px;
+}
+h1{
+    /* apply external font style */
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+section{
+    background-color: rgb(45,45,45);
+    color:white;
+    padding: 5rem 0;
+}
+.advent{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+.text,.text1,.text2,.text3{
+    font-size: 1rem;  /*sir 1.5 */
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+.text1{
+    font-size: 1rem;  /*sir 1.5 */
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+.text2{
+    font-size: 1rem;  /*sir 1.5 */
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+.text3{
+    font-size: 1rem;  /*sir 1.5 */
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+ .bg{
+    position: relative;
+    width: 100%;
+    /* to fix image  */
+    background-attachment: fixed;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+} 
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+/* here we are using background image tag instead of image tag HW */
+.bg1{
+    background-image: url(biking.jpg);
+}
+.bg2{
+    background-image: url(paragliding.jpg);
+}
+.bg3{
+    background-image: url(surfing.jpg);
+}
+.bg4{
+    background-image: url(LAST.png);
+}
+
